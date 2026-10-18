@@ -141,7 +141,7 @@
                             Name: Vishnu Gupta Karapakula<br>
                             Role: AI & ML Specialist<br>
                             Location: Kurnool, Andhra Pradesh, India<br>
-                            Email: mvsstccscsavas@gmail.com<br>
+                            Email: vishnuguptakarapakulaa@gmail.com<br>
                             Phone: +91 9492569789<br>
                             LinkedIn: <a href="https://www.linkedin.com/in/vishnu-gupta-karapakula-a89409272/"
                                 target="_blank">Vishnu-Gupta-K</a><br>
@@ -578,7 +578,7 @@
                         </div>
                         <div class="contact-text">
                             <h3>Email</h3>
-                            <p><a href="mailto:mvsstccscsavas@gmail.com">mvsstccscsavas@gmail.com</a></p>
+                            <p><a href="mailto:vishnuguptakarapakulaa@gmail.com">vishnuguptakarapakulaa@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -630,7 +630,11 @@
                             <label for="message">Message</label>
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <div id="formStatus" class="form-status" style="display: none;"></div>
+                        <button type="submit" class="btn btn-primary" id="sendMessageBtn">
+                            <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>Send Message
+                        </button>
+                        <p class="form-note"><i class="fas fa-info-circle"></i> Opens your email app directly with your message pre-filled.</p>
                     </form>
                 </div>
             </div>
@@ -663,6 +667,57 @@
     <a href="#" class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </a>
+
+    <!-- Contact Terminal Modal -->
+    <div id="contactModal" class="contact-modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+        <div class="contact-modal-backdrop" id="modalBackdrop"></div>
+        <div class="contact-modal-dialog">
+            <div class="terminal modal-terminal">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="terminal-button close" id="modalCloseDot" title="Close"></span>
+                        <span class="terminal-button minimize" title="Minimize"></span>
+                        <span class="terminal-button maximize" title="Maximize"></span>
+                    </div>
+                    <div class="terminal-title" id="modalTitle"><i class="fas fa-terminal"></i> sendmail.sh — Contact Vishnu Gupta</div>
+                    <button type="button" class="modal-close-icon" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+                </div>
+                <div class="terminal-body modal-terminal-body">
+                    <div class="modal-status-badge">
+                        <div class="status-icon-wrap">
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                        <div class="status-badge-text">
+                            <h3>Email Client Launched!</h3>
+                            <p class="status-subtext">Static Site Notice: Message pre-filled for direct sending</p>
+                        </div>
+                    </div>
+
+                    <div class="modal-console-output">
+                        <div class="console-line"><span class="prompt">$</span><span class="command-text">sendmail --recipient "vishnuguptakarapakulaa@gmail.com"</span></div>
+                        <div class="console-line output-text success-text"><i class="fas fa-check-circle"></i> Mail client triggered with your subject &amp; message.</div>
+                        <div class="console-line output-text info-text"><i class="fas fa-info-circle"></i> Didn't open or using webmail? Choose an option below:</div>
+                    </div>
+
+                    <div class="modal-actions">
+                        <a id="openGmailBtn" href="https://mail.google.com/mail/?view=cm&fs=1&to=vishnuguptakarapakulaa@gmail.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary modal-action-btn">
+                            <i class="fab fa-google"></i> Open Web Gmail
+                        </a>
+                        <a id="retryMailtoBtn" href="mailto:vishnuguptakarapakulaa@gmail.com" class="btn btn-secondary modal-action-btn">
+                            <i class="fas fa-envelope-open"></i> Re-launch Mail App
+                        </a>
+                        <button type="button" id="copyMessageBtn" class="btn btn-secondary modal-action-btn">
+                            <i class="fas fa-copy"></i> <span id="copyBtnText">Copy Email &amp; Message</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-footer-note">
+                        <p>Direct Email: <a href="mailto:vishnuguptakarapakulaa@gmail.com" class="direct-email-link">vishnuguptakarapakulaa@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="js/script.js"></script>
